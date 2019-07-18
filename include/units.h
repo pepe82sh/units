@@ -42,8 +42,21 @@
 //--------------------------------------------------------------------------------------------------
 
 #pragma once
-
 #define UNIT_LIB_DISABLE_IOSTREAM
+#ifndef units_h__
+#define units_h__
+
+#pragma push_macro("_N")
+#pragma push_macro("_C")
+#pragma push_macro("_S")
+#pragma push_macro("_L")
+#pragma push_macro("_B")
+
+#undef _N
+#undef _C
+#undef _S
+#undef _L
+#undef _B
 
 #ifdef _MSC_VER
 #pragma push_macro("pascal")
@@ -5393,6 +5406,12 @@ public:
 #endif // _MSC_VER < 1800
 #pragma pop_macro("pascal")
 #endif // _MSC_VER
+
+#pragma pop_macro("_B")
+#pragma pop_macro("_L")
+#pragma pop_macro("_S")
+#pragma pop_macro("_C")
+#pragma pop_macro("_N")
 
 #endif // units_h__
 
